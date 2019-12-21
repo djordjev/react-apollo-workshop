@@ -2,8 +2,13 @@ import React from "react";
 import query from "./query";
 import { useQuery } from "react-apollo";
 
-const Country = () => {
-  const { loading, data, error } = useQuery(query);
+const Country = props => {
+  const code = props.code;
+  const { loading, data, error } = useQuery(query, {
+    variables: {
+      countryCode: code
+    }
+  });
 
   if (loading) return <div>loading...</div>;
   if (error) return <div>error</div>;

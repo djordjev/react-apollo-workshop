@@ -1,8 +1,8 @@
 import { gql } from "apollo-boost";
 
 export default gql`
-  query GetCountry {
-    country(code: "ME") {
+  query GetCountry($countryCode: String!) {
+    country(code: $countryCode) {
       name
       native
       emoji

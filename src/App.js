@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <ApolloProvider client={client}>
-        <Country />
+        <Country code="RO" />
       </ApolloProvider>
     </div>
   );
